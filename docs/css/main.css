@@ -88,7 +88,6 @@ h2 {
     display: inline-block;
     animation: 1s linear-transition infinite ease-in-out;
 }
-/*Media queries*/
 /*Animations*/
 @keyframes rotate {
     0% {
@@ -136,5 +135,11 @@ h2 {
     100%{
         background-color: rgba(176, 34, 212, 0.623);
         transform: scale(0);
+    }
+}
+/*Media queries*/
+@media only screen and (max-width: 360px){
+    #loaders-container {
+        justify-content: center;
     }
 }
