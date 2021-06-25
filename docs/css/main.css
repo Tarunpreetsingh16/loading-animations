@@ -85,6 +85,12 @@ h2 {
     border-radius: 50%;
     animation: pulsating-translate-1 1s infinite ease-in-out;
 }
+#throbber-type-8 {
+    height: 1rem;
+    width: 5rem;
+    background-color: rgba(0, 0, 255, 0.473);
+    overflow: hidden;
+}
 /*Pseudo Classes*/
 #throbber-type-4::before {
     content: '';
@@ -93,6 +99,22 @@ h2 {
     background-color: white;
     display: inline-block;
     animation: 1s linear-transition infinite ease-in-out;
+}
+#throbber-type-8::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: white;
+    animation: rotate-translate-1 1s infinite alternate-reverse ease-in-out;
+}
+#throbber-type-8::after {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: black;
+    animation: rotate-translate-2 1s infinite alternate ease-in-out;
 }
 /*Animations*/
 @keyframes rotate {
@@ -127,7 +149,7 @@ h2 {
     50% {
         transform: scale(1.5);
     }
-    100%{
+    100% {
         transform: scale(1);
     }
 }
@@ -138,7 +160,7 @@ h2 {
     50% {
         transform: scale(1.5);
     }
-    100%{
+    100% {
         background-color: rgba(176, 34, 212, 0.623);
         transform: scale(0);
     }
@@ -163,6 +185,46 @@ h2 {
     100% {
         transform: scale(0) translateX(0);
         background-color: rgba(13, 80, 11, 0.623);
+    }
+}
+@keyframes rotate-translate-1 {
+    0% {
+        transform: translate(-0.5rem, 0);
+    } 
+    20% {
+        transform: translate(1rem, 0.2rem) rotate(72deg);
+    }
+    40% {
+        transform: translate(2rem, -0.2rem) rotate(144deg);
+    }
+    60% {
+        transform: translate(3rem, -0.2rem) rotate(216deg);
+    }
+    80% {
+        transform: translate(4rem, 0.2rem) rotate(288deg);
+    }
+    100% {
+        transform: translate(5rem, 1.2rem) rotate(360deg);
+    }
+}
+@keyframes rotate-translate-2 {
+    0% {
+        transform: translate(-0.5rem, 0);
+    } 
+    20% {
+        transform: translate(1rem, 0.2rem) rotate(72deg);
+    }
+    40% {
+        transform: translate(2rem, -0.2rem) rotate(144deg);
+    }
+    60% {
+        transform: translate(3rem, 0.2rem) rotate(216deg);
+    }
+    80% {
+        transform: translate(4rem, -0.15rem) rotate(288deg);
+    }
+    100% {
+        transform: translate(5rem, -1.2rem) rotate(360deg);
     }
 }
 /*Media queries*/
