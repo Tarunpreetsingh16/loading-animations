@@ -91,6 +91,14 @@ h2 {
     background-color: rgba(0, 0, 255, 0.473);
     overflow: hidden;
 }
+#throbber-type-9 {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 0.8;
+    animation: filling-spin 3s infinite ease-in-out;
+}
 /*Pseudo Classes*/
 #throbber-type-4::before {
     content: '';
@@ -225,6 +233,32 @@ h2 {
     }
     100% {
         transform: translate(5rem, -1.2rem) rotate(360deg);
+    }
+}
+@keyframes filling-spin {
+    0% {
+        border-top: 1.5rem solid black;
+        border-right: 1.5rem solid orangered;
+        border-bottom: 1.5rem solid yellow;
+        border-left: 1.5rem solid green;
+    }
+    25% {
+        border-top: 1.5rem solid green;
+        border-right: 1.5rem solid black;
+        border-bottom: 1.5rem solid orangered;
+        border-left: 1.5rem solid yellow;
+    }
+    50% {
+        border-top: 1.5rem solid yellow;
+        border-right: 1.5rem solid green;
+        border-bottom: 1.5rem solid black;
+        border-left: 1.5rem solid orangered;
+    }
+    100% {
+        border-top: 1.5rem solid orangered;
+        border-right: 1.5rem solid yellow;
+        border-bottom: 1.5rem solid green;
+        border-left: 1.5rem solid black;
     }
 }
 /*Media queries*/
